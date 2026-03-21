@@ -2,9 +2,9 @@
 This is a 12 key macropad that makes use of a rotary encoder and an OLED display. The body was designed in Fusion, and it uses QMK firmware.
 
 ## Features:
-• 128x32 OLED Display
-• EC11 Rotary Encoder
-• 12 Keys
+- 128x32 OLED Display
+- EC11 Rotary Encoder
+- 12 Keys
 
 ## PCB:
 Here's the PCB:
