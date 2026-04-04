@@ -1,0 +1,5 @@
+#define ENCODER_A_PINS { GP0 }
+#define ENCODER_B_PINS { GP1 }
+
+#define BOOTMAGIC_ROW 0
+#define BOOTMAGIC_COLUMN 0
