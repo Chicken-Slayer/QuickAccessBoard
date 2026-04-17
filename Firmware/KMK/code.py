@@ -2,6 +2,9 @@ print("Starting")
 
 import board
 
+# TODO:
+# - Add macros
+
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
