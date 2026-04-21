@@ -59,6 +59,8 @@ keyboard.extensions.append(display)
 
 ## Macro Definitions and Keymaps:
 
+macros.unicode_mode = UnicodeModeWinC
+
 MSG1 = KC.MACRO("GGWP")
 MSG2 = KC.MACRO("Care flank, enemies behind you")
 FLIP = KC.MACRO('(ノಠ痊ಠ)ノ彡┻━┻')
@@ -72,7 +74,7 @@ encoder_handler.pins = (
     )
 
 keyboard.keymap = [
-    [KC.MUTE, KC.MNXT, KC.MPRV, KC.MPLY, KC.MSTP, FLIP, MSG2, CRY, KC.BRIU, KC.BRID, SHRUG, SHOOT]
+    [KC.MUTE, KC.MNXT, KC.MPRV, KC.MPLY, KC.MSTP, MSG1, MSG2, CRY, KC.BRIU, KC.BRID, SHRUG, SHOOT]
 ]
 
 encoder_handler.map = [ ((KC.VOLU, KC.VOLD),),]
