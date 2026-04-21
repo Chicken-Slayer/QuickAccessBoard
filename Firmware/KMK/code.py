@@ -4,9 +4,11 @@ import board
 import busio
 
 from kmk.kmk_keyboard import KMKKeyboard
-from kmk.keys import KC
+from kmk.keys import KC, Key
+from kmk.modules.layers import Layers
+from kmk.modules.holdtap import HoldTap
 from kmk.scanners import DiodeOrientation
-from kmk.modules.macros import Macros
+from kmk.modules.macros import Macros, UnicodeModeWinC
 from kmk.modules.macros import Press, Release, Tap
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.encoder import EncoderHandler
@@ -17,6 +19,7 @@ from kmk.extensions.display.ssd1306 import SSD1306
 
 keyboard = KMKKeyboard()
 encoder_handler = EncoderHandler()
+keyboard.modules.append(encoder_handler)
 
 macros = Macros()
 keyboard.modules.append(macros)
@@ -58,6 +61,10 @@ keyboard.extensions.append(display)
 
 MSG1 = KC.MACRO("GGWP")
 MSG2 = KC.MACRO("Care flank, enemies behind you")
+FLIP = KC.MACRO('(ノಠ痊ಠ)ノ彡┻━┻')
+SHRUG = KC.MACRO('¯\_(ツ)_/¯')
+CRY = KC.MACRO('😭')
+SHOOT = KC.MACRO('( •_•)>⌐■-■')
 
 encoder_handler.pins = (
     # regular direction encoder
@@ -65,10 +72,10 @@ encoder_handler.pins = (
     )
 
 keyboard.keymap = [
-    [KC.MUTE, KC.MNXT, KC.MPRV, KC.MPLY, KC.MSTP, MSG1, MSG2, KC.H, KC.I, KC.J, KC.K, KC.L]
+    [KC.MUTE, KC.MNXT, KC.MPRV, KC.MPLY, KC.MSTP, FLIP, MSG2, CRY, KC.BRIU, KC.BRID, SHRUG, SHOOT]
 ]
 
-encoder_handler.map = [ ((KC.UP, KC.DOWN),),]
+encoder_handler.map = [ ((KC.VOLU, KC.VOLD),),]
 
 if __name__ == '__main__':
     keyboard.go()
