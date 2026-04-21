@@ -3,9 +3,6 @@ print("Starting")
 import board
 import busio
 
-# TODO:
-# - Add macros
-
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
@@ -24,14 +21,12 @@ encoder_handler = EncoderHandler()
 macros = Macros()
 keyboard.modules.append(macros)
 keyboard.extensions.append(MediaKeys())
-keyboard.modules = [layers, holdtap, encoder_handler]
-
-keyboard.col_pins = (board.GP20, board.GP19, board.GP18)
-keyboard.row_pins = (board.GP6, board.GP7, board.GP8, board.GP9)
+keyboard.col_pins = (board.D10, board.D9, board.D8)
+keyboard.row_pins = (board.D0, board.D1, board.D2, board.D3)
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 ## OLED Configuration:
-i2c_bus = busio.I2C(board.GP_SCL, board.GP_SDA)
+i2c_bus = busio.I2C(board.SCL, board.SDA)
 
 driver = SSD1306(i2c=i2c_bus)
 
@@ -77,4 +72,3 @@ encoder_handler.map = [ ((KC.UP, KC.DOWN),),]
 
 if __name__ == '__main__':
     keyboard.go()
-    
