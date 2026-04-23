@@ -14,7 +14,6 @@ from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.encoder import EncoderHandler
 from kmk.extensions.display import Display, TextEntry, ImageEntry
 from kmk.extensions.display.ssd1306 import SSD1306
-
 ## Keyboard Configuration:
 
 keyboard = KMKKeyboard()
@@ -61,12 +60,14 @@ keyboard.extensions.append(display)
 
 macros.unicode_mode = UnicodeModeWinC
 
+## Assign macros to your desired messages here
+
 MSG1 = KC.MACRO("GGWP")
 MSG2 = KC.MACRO("Care flank, enemies behind you")
-FLIP = KC.MACRO('(ノಠ痊ಠ)ノ彡┻━┻')
-SHRUG = KC.MACRO('¯\_(ツ)_/¯')
-CRY = KC.MACRO('😭')
-SHOOT = KC.MACRO('( •_•)>⌐■-■')
+FLIP = KC.MACRO('Hatt')
+SHRUG = KC.MACRO('Kya hi kar sakte hai :(')
+NICE = KC.MACRO('Nice work team!')
+RR = KC.MACRO('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
 encoder_handler.pins = (
     # regular direction encoder
@@ -74,7 +75,7 @@ encoder_handler.pins = (
     )
 
 keyboard.keymap = [
-    [KC.MUTE, KC.MNXT, KC.MPRV, KC.MPLY, KC.MSTP, MSG1, MSG2, CRY, KC.BRIU, KC.BRID, SHRUG, SHOOT]
+    [KC.MUTE, KC.MNXT, KC.MPRV, KC.MPLY, KC.MSTP, MSG1, MSG2, NICE, KC.BRIU, KC.BRID, SHRUG, RR]
 ]
 
 encoder_handler.map = [ ((KC.VOLU, KC.VOLD),),]
