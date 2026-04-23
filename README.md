@@ -1,5 +1,7 @@
 # QuickAccessBoard
-This is a 12 key macropad that makes use of a rotary encoder and an OLED display. The body was designed in Fusion, and it uses QMK firmware.
+This is a 12 key macropad that makes use of a rotary encoder and an OLED display. The body was designed in Fusion, and it uses KMK firmware.
+
+<img src=assets/cover.jpeg alt="cover"/>
 
 ## Features:
 - 128x32 OLED Display
@@ -23,9 +25,9 @@ It has two separate printed pieces: the base, and the top cover.
 Made in Fusion.
 
 ## Firmware Overview
-This hackpad uses [QMK](https://qmk.fm/) firmware for everything. 
+This hackpad uses [KMK](https://github.com/KMKfw/kmk_firmware) firmware for everything. A key matrix is defined in the code, and various macros are assigned to different keys, as well as media control, brightness controls, and setup for an OLED display. The display by default shows a static image, and goes into sleep mode when the keyboard is not in use. 
 
-I will work more on the firmware once the hackpad is physically set up. 
+It can be easily modified to accomodate other macros and the OLED display image can also be easily swapped out for another, or even an animation quite easily.
 
 ## BOM:
 Here should be everything you need to make this hackpad
